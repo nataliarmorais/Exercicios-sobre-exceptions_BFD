@@ -2,7 +2,9 @@
 def limpar_tela():
     print("-------------------------------")
 
-# 1 - Ler número inteiro
+# 1 - Escreva um programa que peça ao usuário para digitar um número. Trate o erro caso ele digite algo que não seja um número inteiro.
+
+
 try:
     numero = int(input("Digite um número inteiro: "))
     print(f"O número digitado foi: {numero}")
@@ -10,7 +12,8 @@ except ValueError:
     print("Você não digitou um número inteiro válido.")
 limpar_tela()
 
-# 2 - Multiplicação de dois números
+# 2 - Peça ao usuário dois números e tente multiplicá-los. Se o usuário digitar algo inválido, exiba uma mensagem de erro.
+
 try:
     num1 = float(input("Digite o primeiro número: "))
     num2 = float(input("Digite o segundo número: "))
@@ -20,7 +23,8 @@ except ValueError:
     print("Erro! Você digitou um número inválido!")
 limpar_tela()
 
-# 3 - Número inteiro com else
+# 3 - Crie um programa que peça ao usuário um número inteiro. Se a conversão for bem-sucedida, mostre uma mensagem usando o bloco else.
+
 try:
     numero = int(input("Digite um número inteiro: "))
 except ValueError:
@@ -30,7 +34,8 @@ else:
 finally:
     limpar_tela()
 
-# 4 - Abrir arquivo com finally
+# 4 - Implemente um programa que abra um arquivo chamado dados.txt (não precisa existir). Use try e finally para garantir que uma mensagem de "Encerrando programa" seja sempre exibida.
+
 try:
     arquivo = open("dados.txt", "r")
     print("Arquivo aberto com sucesso.")
@@ -41,7 +46,8 @@ finally:
     print("Encerrando programa")
 limpar_tela()
 
-# 5 - Função dividir
+# 5 - Crie uma função dividir(a, b) que lance (raise) uma exceção ZeroDivisionError se b for igual a zero. Caso contrário, retorne o resultado da divisão.
+
 def dividir(a, b):
     if b == 0:
         raise ZeroDivisionError("Erro! Divisão por zero não é permitida.")
@@ -54,7 +60,8 @@ except ZeroDivisionError as e:
     print("Erro:", e)
 limpar_tela()
 
-# 6 - Exceção personalizada IdadeInvalidaError
+# 6 - Crie uma exceção personalizada chamada IdadeInvalidaError. Depois, crie uma função cadastrar_idade(idade) que lance essa exceção caso a idade seja negativa.
+
 class IdadeInvalidaError(Exception):
     pass
 
@@ -70,7 +77,10 @@ except IdadeInvalidaError:
     print("A idade não pode ser negativa!")
 limpar_tela()
 
-# 7 - Divisão com tratamento de ValueError e ZeroDivisionError
+# 7 -Peça ao usuário dois números e divida o primeiro pelo segundo. Trate dois tipos de erro:
+#ValueError se o usuário digitar algo inválido
+#ZeroDivisionError se tentar dividir por zero
+
 def divisao_usuario():
     try:
         num1 = float(input("Digite o primeiro número: "))
@@ -86,7 +96,11 @@ def divisao_usuario():
 
 divisao_usuario()
 
-# 8 - Verificar se número é par ou ímpar
+# 8 - Crie um programa que peça ao usuário um número inteiro e verifique se ele é par. Use:
+#try para a conversão,
+#else para verificar se é par ou ímpar,
+#finally para exibir "Fim do programa
+
 def verificar_par():
     try:
         numero = int(input("Digite um número inteiro: "))
@@ -101,7 +115,10 @@ def verificar_par():
 
 verificar_par()
 
-# 9 - Função sacar com exceção personalizada
+# 9 - Crie uma função sacar(saldo, valor) que:
+#Lance (raise) uma exceção personalizada SaldoInsuficienteError se o valor for maior que o saldo.
+#Caso contrário, retorne o novo saldo. Teste a função dentro de um try-except e exiba uma mensagem apropriada ao us
+
 class SaldoInsuficienteError(Exception):
     pass
 
@@ -116,7 +133,7 @@ try:
     saldo_atual = 100
     saldo_atual = sacar(saldo_atual, 50)
     print("Saldo após saque:", saldo_atual)
-    saldo_atual = sacar(saldo_atual, 100)  # Vai disparar SaldoInsuficienteError
+    saldo_atual = sacar(saldo_atual, 100)  
 except ValueError as ve:
     print("Erro:", ve)
 except SaldoInsuficienteError as sie:
